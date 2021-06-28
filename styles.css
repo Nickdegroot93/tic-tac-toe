@@ -1,0 +1,264 @@
+/* RESET */
+\html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 62.5%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol,
+ul {
+	list-style: none;
+}
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*******************************************************************************************/
+
+:root {
+	--dark: #283149;
+	--semi-dark: #404b69;
+	--white-ish: #dbedf3;
+	--red-ish: #f73859;
+}
+
+html {
+	font-family: roboto;
+	background-color: var(--dark);
+	color: var(--white-ish);
+}
+
+header {
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.squares {
+	margin: 1rem 0 1rem 0;
+	height: 30rem;
+	width: 30rem;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 10rem);
+	text-align: center;
+	align-items: center;
+}
+
+.square {
+	box-sizing: border-box;
+	height: 100%;
+	width: 100%;
+	border-radius: 1rem;
+	border: solid var(--red-ish) 3px;
+	transition: all 0.2s ease;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: crosshair;
+}
+
+.square:hover {
+	background-color: #2f3955;
+}
+
+.control-box {
+	width: 50rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/********************* BUTTONS *********************/
+
+.active {
+	display: block !important;
+}
+
+button {
+	border-style: none;
+	width: 11rem;
+	padding: 0.8rem 2rem;
+	background-color: var(--semi-dark);
+	color: var(--white-ish);
+	border: 1px solid var(--dark);
+	transition: all 0.5s ease;
+	cursor: pointer;
+}
+button:hover {
+	border: 1px solid var(--white-ish);
+}
+
+#play-btn {
+	margin-top: 10rem;
+	display: none;
+}
+
+#reset-btn {
+	display: none;
+	width: 3rem;
+	padding: 1rem;
+	filter: invert(26%) sepia(61%) saturate(303%) hue-rotate(185deg)
+		brightness(91%) contrast(89%);
+	transition: transform 0.35s ease;
+}
+#reset-btn:hover {
+	cursor: pointer;
+	transform: rotate(90deg);
+}
+#reset-btn:active {
+	cursor: pointer;
+	transform: rotate(360deg);
+}
+
+/********************* TEXT *********************/
+
+h1 {
+	font-size: 3rem;
+	margin: 0 0 0.5rem 0;
+}
+
+h1::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 5rem;
+	height: 1px;
+	width: 20%;
+	background-color: var(--white-ish);
+}
+
+h2 {
+	font-size: 0.7rem;
+}
+
+/********************* IMG/SVG *********************/
+
+#svg {
+	width: 5rem;
+	height: 5rem;
+	filter: invert(26%) sepia(61%) saturate(303%) hue-rotate(185deg)
+		brightness(91%) contrast(89%);
+}
+
+/********************* WIN/ LOSE COLOR TEMPORARY *********************/
